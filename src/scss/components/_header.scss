@@ -1,0 +1,218 @@
+.header {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    z-index: 99;
+
+    @include tablet-sm {
+        height: auto;
+    }
+    
+    &__wrapper {
+        position: relative;
+        max-width: 1289px;
+        margin: 0 auto;
+        display: flex;
+        background-color: transparent;
+        padding: 0 20px;
+
+        @include tablet-sm {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 45px 40px 0;
+        }
+
+        @include tablet-md {
+            padding: 55px 80px 0;
+        }
+
+        @include desktop-sm {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-top: 15px;
+        z-index: 15;
+
+        @include tablet-sm {
+            padding-top: 0;
+        }
+
+        &__wrapper {
+            @include tablet-sm {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &__logo {
+            position: relative;
+            display: block;
+            background-image: url('../images/whh_html.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+
+            @include tablet-sm {
+                height: 43px;
+                width: 43px;
+            }
+        }
+
+        &__txt {
+            display: none;
+
+            @include tablet-sm {
+                display: block;
+                margin-left: 12px;
+                font-size: 2.25rem;
+                line-height: 1.36em;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__burger {
+        position: relative;
+        width: 16px;
+        height: 12px;
+        transition: .2s;
+
+        @include tablet-sm {
+            display: none;
+        }
+
+        &.is--active {
+            transform: rotate(-90deg);
+
+            span {
+                &:nth-of-type(1) {
+                    top: calc(50% - 1px);
+                    transform: rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+
+                &:nth-of-type(3) {
+                    bottom: calc(50% - 1px);
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            background-color: $black;
+            transition: top .2s .2s, bottom .2s .2s, opacity .2s .2s, transform .2s .4s;
+
+            &:nth-of-type(1) {
+                top: 0;
+            }
+
+            &:nth-of-type(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:nth-of-type(3) {
+                bottom: 0;
+            }
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: -100%;
+        height: 100vh;
+        padding-top: 115px;
+        background-color: $white;
+        z-index: 10;
+        transition: .3s ease-out;
+
+        @include tablet-sm {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            left: 0;
+            height: auto;
+            padding-top: 0;
+            padding-right: 35px;
+            background-color: unset;
+        }
+
+        @include tablet-md {
+
+            padding-right: 83px;
+        }
+
+        &.is--active {
+            left: 0;
+        }
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            @include tablet-sm {
+                flex-direction: row;
+                align-items: center;
+            }
+
+        }
+
+        &__item {
+            list-style-type: none;
+            text-align: center;
+            margin-bottom: 35px;
+
+            @include tablet-sm {
+                margin-bottom: 0;
+                margin-left: 40px;
+            }
+        }
+
+        &__link {
+            position: relative;
+            padding-bottom: 7px;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            line-height: 1.375em;
+            color: $grey;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 2px;
+                width: 0;
+                background-color: transparent;
+                transition: 1s transform ease-in-out;
+            }
+            &:hover {
+                color: $orange-dark;
+                &:after {
+                    background-color: $orange-dark;
+                    width: 45%;
+                }
+            }
+        }
+    }
+}

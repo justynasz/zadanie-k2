@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 114px;
+    background-color: $blue;
+
+    &__title {
+        font-size: 1.125rem;
+        line-height: 1.62em;
+        font-family: 'Khula', sans-serif;
+        font-weight: 700;
+        color: $white;
+    }
+}

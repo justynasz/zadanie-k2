@@ -1,0 +1,101 @@
+.main {
+    &__wrapper {
+        margin-top: 35px;
+
+        @include tablet-md {
+            display: flex;
+            height: 600px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.07);
+            border-radius: 20px;
+            background-color: $white;
+            max-width: 1289px;
+            margin: 52px 40px 74px;
+        }
+
+        @include desktop-xs {
+            margin-left: auto;
+            margin-right: auto;
+            height: 680px;
+        }
+    }
+
+    &__container {
+        @include tablet-md {
+            width: 50%;
+        }
+    }
+    &__content {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet-md {
+            height: 100%;
+            justify-content: center;
+        }
+
+        &.is--active {
+            display: flex;
+        }
+        
+        .section__title {
+            margin-top: 14px;
+            margin-bottom: 37px;
+
+            @include tablet-md {
+                margin-bottom: 40px;
+            }
+        }
+        &[data-js=content-register] {
+            .section__title {
+                margin-bottom: 27px;
+            }
+        }
+    }
+
+    &__form {
+        &__space {
+            width: 73px;
+            height: 3px;
+            margin: 27px auto 25px;
+            background-color: $orange;
+        }
+
+        .group {
+            &--switch {
+                margin-top: 15px;
+                margin-bottom: 30px;
+            }
+
+            &--checkbox {
+                margin-top: 31px;
+                margin-bottom: 48px;
+            }
+        }
+
+        .btn {
+            margin: 0 auto;
+        }
+
+        .link {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+    }
+
+    &__txt,
+    &__info {
+        line-height: 26px;
+        margin-top: 18px;
+        margin-bottom: 12px;
+        font-family: 'Khula', sans-serif;
+        color: $grey2;
+    }
+
+    &__info {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+}

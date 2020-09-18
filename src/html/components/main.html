@@ -1,0 +1,73 @@
+<main class="main" data-js="main">
+    <div class="main__wrapper">
+        @@include('./swiper.html')
+        <div class="main__container" data-js="main-container">
+            <div class="main__content is--active">
+                <h2 class="section__title">Dzień dobry</h2>
+                <button class="btn" data-js="login-btn">Zaloguj się</button>
+                <p class="main__txt">lub</p>
+                <button class="btn btn--secondary" data-js="register-btn">Zarejestruj</button>
+            </div>
+
+            <div id="content-login" class="main__content" data-js="content-login">
+                <h2 class="section__title">Zaloguj się</h2>
+                <form class="main__form" name="loginform" action="" method="post" data-js="login-form">
+                    <div class="group">
+                        <input type="text" id="login" placeholder="Login" required>
+                        <label for="login">Login</label>
+                        <p class="name-error" data-js="login-error">Pole jest wymagane</p>
+                    </div>
+                    <div class="group">
+                        <input type="password" id="password" placeholder="Hasło" required>
+                        <label for="password">Hasło</label>
+                        <p class="name-error" data-js="password-error">Pole jest wymagane</p>
+                    </div>
+                    <div class="group group--switch">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <p class="switch__text">Zapamiętaj moją sesję</p>
+                    </div>
+                    <button type="submit" class="btn" data-js="send-login-form">Dalej</button>
+                    <a href="#" class="main__form__link link" data-js="register-btn">Nie mam konta</a>
+                </form>
+            </div>
+            <div id="content-registe" class="main__content" data-js="content-register">
+                <h2 class="section__title">Zarejestruj się</h2>
+                <form class="main__form" name="registerform" action="" method="post" data-js="register-form">
+                    <div class="group">
+                        <input type="text" id="newlogin" placeholder="Login" required>
+                        <label for="newlogin">Login</label>
+                        <p class="name-error" data-js="newlogin-error">Pole jest wymagane</p>
+                    </div>
+                    <div class="group">
+                        <input type="password" id="newpassword" placeholder="Hasło" required>
+                        <label for="newpassword">Hasło</label>
+                        <p class="name-error" data-js="newpassword-error">Pole jest wymagane</p>
+                    </div>
+                    <div class="main__form__space"></div>
+                    <div class="group">
+                        <input type="text" id="name" placeholder="Imię i nazwisko" required>
+                        <label for="name">Imię i nazwisko</label>
+                        <p class="name-error" data-js="name-error">Pole jest wymagane</p>
+                    </div>
+                    <div class="group">
+                        <input type="email" id="email" placeholder="Adres e-mail" required>
+                        <label for="email">Adres e-mail</label>
+                        <p class="name-error" data-js="email-error">Podaj poprawny format e-maila</p>
+                    </div>
+                    <div class="group group--checkbox">
+                        <label class="checkbox">Wyrażam zgodę na lorem ipsum lorem ipsum
+                            <input id="agree" type="checkbox" data-js="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <p class="name-error" data-js="agree-error">Zgoda jest wymagana</p>
+                    </div>
+                    <button type="submit" class="btn" data-js="send-register-form">Załóż konto</button>
+                    <a href="#" class="main__form__link link" data-js="login-btn">Chcę się zalogować</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

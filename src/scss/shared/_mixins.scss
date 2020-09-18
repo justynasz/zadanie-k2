@@ -1,0 +1,58 @@
+@import 'variables';
+
+/*   breakpoints */
+@mixin mobile-sm {
+
+	//414
+	@media (min-width: $mobile-sm) {
+		@content;
+	}
+}
+
+@mixin mobile-md {
+
+	//480
+	@media (min-width: $mobile-md) {
+		@content;
+	}
+}
+
+@mixin tablet-sm {
+
+	//768
+	@media (min-width: $tablet-sm) {
+		@content;
+	}
+}
+
+@mixin tablet-md {
+
+	//1024
+	@media (min-width: $tablet-md) {
+		@content;
+	}
+}
+
+@mixin desktop-xs {
+
+	//1200
+	@media (min-width: $desktop-xs) {
+		@content;
+	}
+}
+
+@mixin desktop-sm {
+
+	//1366
+	@media (min-width: $desktop-sm) {
+		@content;
+	}
+}
+
+@mixin desktop-md {
+
+	//1680
+	@media (min-width: $desktop-md) {
+		@content;
+	}
+}

@@ -1,0 +1,148 @@
+.news {
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        @include mobile-md {
+            padding: 0 30px;
+        }
+
+        @include tablet-sm {
+            grid-template-columns: 1fr 1fr;
+            margin-top: 9px;
+        }
+
+        @include desktop-xs {
+            max-width: 1070px;
+            margin: 9px auto 35px;
+        }
+    }
+
+    &__information {
+        display: none;
+        margin-top: 11px;
+        margin-bottom: 35px;
+        padding: 0 12px;
+        color: $grey;
+
+        @include tablet-md {
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding: 0 14px;
+        }
+    
+        &.is--show:last-of-type {
+            margin-bottom: 21px;
+        }
+
+        &:nth-of-type(5n+2) {
+            @include tablet-md {
+                grid-column: span 1;
+                grid-row: span 2;
+
+                .news__information__img {
+                    height: 290px;
+                }
+            }
+        }
+
+        &__heading {
+            display: flex;
+
+            @include tablet-md {
+                flex-direction: column-reverse;
+            }
+        }
+
+        &__title {
+            position: relative;
+            width: auto;
+            padding-left: 13px;
+            font-size: 1.125rem;
+            line-height: 1.39em;
+            font-weight: 700;
+
+            @include tablet-md {
+                font-size: 1.5rem;
+                padding-left: 47px;
+            }
+
+            &:before {
+                @include tablet-md {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-image: url('../images/ri_double-quotes-l.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 39px;
+                    height: 39px;
+                }
+            }
+        }
+
+        &__img {
+            width: 125px;
+            flex-shrink: 0;
+            height: auto;
+            @include tablet-md {
+                height: 145px;
+                width: 100%;
+            }
+
+            img {
+                height: auto;
+                width: 100%;
+                @include tablet-md {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &__date {
+            display: none;
+
+            @include tablet-md {
+                display: block;
+                font-size: 0.75rem;
+                line-height: 1.33em;
+                color: $black;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__desc {
+            margin-top: 5px;
+            font-size: 0.875rem;
+            line-height: 200%;
+
+            @include tablet-md {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    &__more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-family: 'Open Sans', sans-serif;
+
+        svg {
+            fill: $orange;
+        }
+
+        &:hover {
+            svg {
+                fill: $orange-dark;
+            }
+        }
+    }
+}

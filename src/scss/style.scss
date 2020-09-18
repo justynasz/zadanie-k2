@@ -1,0 +1,15 @@
+//variable
+@import "shared/variables";
+@import "shared/mixins";
+
+
+@import "shared/reset";
+@import "shared/global";
+
+//components
+@import "components/footer";
+@import "components/header";
+@import "components/main";
+@import "components/news";
+@import "components/swiper";
+@import "components/technologies";
